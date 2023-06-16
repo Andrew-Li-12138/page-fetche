@@ -1,11 +1,11 @@
-const URL = process.argv.slice(2, 3);
-const localPath = process.argv.slice(3, 4);
+const URL = process.argv[2];
+const localPath = process.argv[3];
 const request = require('request');
 const fs = require('fs');
 
 const fetcher = function(URLCmd, pathCmd) {
   request(`${URLCmd}`, (error, response, body) => {
-    console.log(`URL:${URLCmd}`); //prints URL input for easy spell check in console
+    console.log(`URL: ${URLCmd}`); //prints URL input for easy spell check in console
     console.log(`local path: ${pathCmd}`);//prints local path input for easy spell check in console
     console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
     //when request has error
