@@ -1,5 +1,3 @@
-const URL = process.argv[2];
-const localPath = process.argv[3];
 const request = require('request');
 const fs = require('fs');
 
@@ -34,4 +32,6 @@ const fetcher = function(URLCmd, pathCmd) {
   });
 };
 
-fetcher(URL, localPath);
+const urlPath = process.argv[2];
+const localPath = process.argv[3];
+fetcher(urlPath, localPath);
